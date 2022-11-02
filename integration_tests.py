@@ -13,8 +13,8 @@ class TestApp(flask_testing.TestCase):
         return app
 
     def setUp(self):
-        with app.app_context():
-            db.create_all()
+        # with app.app_context():
+        db.create_all()
 
     def tearDown(self):
         db.session.remove()
@@ -119,6 +119,9 @@ class TestCreateConsultation(TestApp):
         self.assertEqual(response.json, {
             'message': 'Patient does not have enough e-wallet funds.'
         })
+
+
+
 
 
 if __name__ == '__main__':

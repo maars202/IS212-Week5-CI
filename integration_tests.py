@@ -13,7 +13,8 @@ class TestApp(flask_testing.TestCase):
         return app
 
     def setUp(self):
-        db.create_all()
+        with app.app_context():
+            db.create_all()
 
     def tearDown(self):
         db.session.remove()

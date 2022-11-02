@@ -55,3 +55,9 @@ jobs:
         run: |
           #TODO: Add the command to run all the unittest here.
           pytest unit_tests.py
+
+      - name: Test with integration testing
+        #runs the unittest
+        run: |
+          #TODO: Add the command to run all the unittest here.
+          pytest unit_test.py
